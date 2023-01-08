@@ -1,0 +1,321 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Slip-1\par
+Q1.Write a python program to show use of multiple exception handing\par
+string = input()\par
+\par
+try:\par
+    num = int(input())\par
+    print(string+num)\par
+except (TypeError, ValueError) as e:\par
+    print(e)\par
+\par
+Q2.\par
+def perfect_number(n):\par
+    sum = 0\par
+    for x in range(1, n):\par
+        if n % x == 0:\par
+            sum += x\par
+    return sum == n\par
+print(perfect_number(10))\par
+\b Q3 Write a python program to display only those words from the text file which contains three characters in it\par
+\b0 import re\par
+text = 'The quick brown fox jumps over the lazy dog.'\par
+print(re.findall(r"\\b\\w\{3\}\\b", text))\par
+\b or\par
+\b0 with open("filename.txt") as f:\par
+lines = f.readlines()\par
+for line in lines:\par
+    words = [word for word in line.split() if len(word)==3 ]\par
+print(words)\par
+\b Slip-2\par
+Q1.Write a python program to show how to use else clause with try and except clauses.\par
+\b0 # Python code to illustrate\par
+# working of try()\par
+def divide(x, y):\par
+\tab try:\par
+\tab\tab # Floor Division : Gives only Fractional Part as Answer\par
+\tab\tab result = x // y\par
+\tab\tab print("Yeah ! Your answer is :", result)\par
+\tab except ZeroDivisionError:\par
+\tab\tab print("Sorry ! You are dividing by zero ")\par
+\par
+# Look at parameters and note the working of Program\par
+divide(3, 0)\par
+\b OR\par
+\b0 # Program to depict else clause with try-except\par
+\par
+# Function which returns a/b\par
+def AbyB(a , b):\par
+\tab try:\par
+\tab\tab c = ((a+b) // (a-b))\par
+\tab except ZeroDivisionError:\par
+\tab\tab print ("a/b result in 0")\par
+\tab else:\par
+\tab\tab print (c)\par
+\par
+# Driver program to test above function\par
+AbyB(2.0, 3.0)\par
+AbyB(3.0, 3.0)\par
+\b Q2.Write a python program to count and display even and odd numbers of a List.\par
+\b0 # Python program to count Even\par
+# and Odd numbers in a List\par
+\par
+# list of numbers\par
+list1 = [10, 21, 4, 45, 66, 93, 11,2,7,6,]\par
+\par
+even_count, odd_count = 0, 0\par
+\par
+# iterating each number in list\par
+for num in list1:\par
+\par
+\tab # checking condition\par
+\tab if num % 2 == 0:\par
+\tab\tab even_count += 1\par
+\par
+\tab else:\par
+\tab\tab odd_count += 1\par
+\par
+print("Even numbers in the list: ", even_count)\par
+print("Odd numbers in the list: ", odd_count)\par
+\b Q3 Write a python program to find sum of items of a Dictionary.\par
+\b0 # Python3 Program to find sum of\par
+# all items in a Dictionary\par
+\par
+# Function to print sum\par
+\par
+\par
+def returnSum(dict):\par
+\par
+\tab sum = 0\par
+\tab for i in dict.values():\par
+\tab\tab sum = sum + i\par
+\par
+\tab return sum\par
+\par
+\par
+# Driver Function\par
+dict = \{'a': 100, 'b': 200, 'c': 300,'d':150\}\par
+print("Sum :", returnSum(dict))\par
+\b Slip-3\par
+Q1.Write a python program to show use of finally clause of exception handling\par
+\b0 # Python program to demonstrate finally\par
+\par
+# No exception Exception raised in try block\par
+try:\par
+\tab k = 5//0 # raises divide by zero exception.\par
+\tab print(k)\par
+\par
+# handles zerodivision exception\tab\par
+except ZeroDivisionError:\par
+\tab print("Can't divide by zero")\par
+\tab\par
+finally:\par
+\tab # this block is always executed\par
+\tab # regardless of exception generation.\par
+\tab print('This is always executed')\par
+\b Q2.Write a program that returns a list that contains only the elements that are common\par
+between the lists (without duplicates). Make sure your program works on two lists of different sizes.\par
+\b0 a = [1, 1, 2, 2, 3, 5, 8, 13, 21, 34, 55, 89]\par
+b = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]\par
+c = set(a) & set(b)  #  & calculates the intersection.\par
+print(c)\par
+\b Q.3Write a python program which accepts file name and word to be searched in file.\par
+Display line numbers which contain given word and total occurrences of it.\par
+\b0 #get file object reference to the file\par
+file = open("C:\\workspace\\python\\data.txt", "r")\par
+#read content of file to string\par
+data = file.read()\par
+#get number of occurrences of the substring in the string\par
+occurrences = data.count("python")\par
+print('Number of occurrences of the word :', occurrences)\par
+\b OR\par
+\b0 fname = input("Enter file name: ")\par
+word=input("Enter word to be searched:")\par
+k = 0\par
+with open(fname, 'r') as f:\par
+    for line in f:\par
+        words = line.split()\par
+        for i in words:\par
+            if(i==word):\par
+                k=k+1\par
+print("Occurrences of the word:")\par
+print(k)\par
+\b Slip-4\par
+Q1\par
+\b0 # Python program to handle simple runtime error\par
+#Python 3\par
+a = [1, 2, 3]\par
+try:\par
+\tab print ("Second element = %d" %(a[1]))\par
+\tab # Throws error since there are only 3 elements in array\par
+\tab print ("Fourth element = %d" %(a[3]))\par
+except:\par
+\tab print ("An error occurred")\par
+\b OR\par
+\b0 x = -1\par
+if x < 0:\par
+  raise Exception("Sorry, no numbers below zero")\par
+\b Q2.Write a python program to display \lquote n\rquote  terms of Fibonacci series using recursion\par
+\b0 def recur_fibo(n):  \par
+   if n <= 1:  \par
+       return n  \par
+   else:  \par
+       return(recur_fibo(n-1) + recur_fibo(n-2))  \par
+# take input from the user  \par
+nterms = int(input("How many terms? "))  \par
+# check if the number of terms is valid  \par
+if nterms <= 0:  \par
+   print("Plese enter a positive integer")  \par
+else:  \par
+   print("Fibonacci sequence:")  \par
+   for i in range(nterms):  \par
+       print(recur_fibo(i))  \par
+\b Q3.Write a python program to reverse each word of sentence of a file and also count total\par
+lines.\par
+(not count)  \par
+\b0 # Python code to Reverse each word\par
+# of a Sentence individually\par
+# Function to Reverse words\par
+def reverseWordSentence(Sentence):\par
+    # Splitting the Sentence into list of words.\par
+    words = Sentence.split(" ")\par
+    # Reversing each word and creating\par
+    # a new list of words\par
+    # List Comprehension Technique\par
+    newWords = [word[::-1] for word in words]\par
+    # Joining the new list of words\par
+    # to for a new Sentence\par
+    newSentence = " ".join(newWords)\par
+    return newSentence\par
+# Driver's Code\par
+Sentence = "GeeksforGeeks is good to learn"\par
+# Calling the reverseWordSentence\par
+# Function to get the newSentence\par
+print(reverseWordSentence(Sentence))\par
+\b Slip-5\par
+Q1Write a python program to show use of assert keyword.\par
+\b0 # working of assert\par
+# initializing number\par
+a = 4\par
+b = 0\par
+# using assert to check for 0\par
+print("The value of a / b is : ")\par
+assert b != 0, "Zero Division Error"\par
+print(a / b)\par
+\b Q2.Write a python program to perform following task. [20 marks]\par
+a. Calculate the factorial of given number.\par
+b. Reverse the given number.\b0\par
+# factorial of given number\par
+def factorial(n):\par
+    # single line to find factorial\par
+    return 1 if (n==1 or n==0) else n * factorial(n - 1);\par
+# Driver Code\par
+num = 6;\par
+print("Factorial of",num,"is",\par
+factorial(num))\par
+ \b b.\par
+\b0 num = 1234\par
+reversed_num = 0\par
+while num != 0:\par
+    digit = num % 10\par
+    reversed_num = reversed_num * 10 + digit\par
+    num //= 10\par
+print("Reversed Number: " + str(reversed_num))\par
+\b Q3.\par
+Slip-6\par
+Q1.Write a python program to create a lambda function that adds 15 to a given number passed in as an argument.\par
+\b0 r = lambda a : a + 15\par
+print(r(10))\par
+r = lambda x, y : x * y\par
+print(r(12, 4))\par
+\b Q2.Write a python program to print following pattern using loop. [20 marks]\par
+A\par
+B C\par
+D E F\par
+G H I J\par
+\b0 # Outer loop\par
+for i in range(65,70):\par
+    k=i\par
+    # Inner loop\par
+    for j in range(65,i+1):\par
+        print(chr(k),end="")\par
+        k=k+1\par
+    print()\par
+\b Q3.Write a Python program to reverse the content of a file and store it in another file\par
+\b0 # Open the file in write mode\par
+f2 = open("output2.txt", "w")\par
+# Open the input file again and get\par
+# the content as list to a variable data\par
+with open("file.txt", "r") as myfile:\par
+data = myfile.readlines()\par
+# We will just reverse the\par
+# array using following code\par
+data_2 = data[::-1]\par
+# Now we will write the fully reverse\par
+# list in the output2 file using\par
+# following command\par
+f2.writelines(data_2)\par
+f2.close()\par
+\b Slip-7\par
+Q1.Write a python program to show how to handle multiple exceptions.\par
+\b0 string = input()\par
+try:\par
+    num = int(input())\par
+    print(string+num)\par
+except (TypeError, ValueError) as e:\par
+    print(e)\par
+\b Q2.\par
+\b0 number = int(input ("Enter the number of which the user wants to print the multiplication table: "))      \par
+# We are using "for loop" to iterate the multiplication 10 times       \par
+print ("The Multiplication Table of: ", number)    \par
+for count in range(1, 11):      \par
+   print (number, 'x', count, '=', number * count)    \par
+\b Slip-8\par
+Q1\par
+\b0 # Python Program to Calculate Cube of a Number\par
+def cube(num):\par
+    return num * num * num\par
+number = float(input(" Please Enter any numeric Value : "))\par
+cub = cube(number)\par
+print("The Cube of a Given Number \{0\}  = \{1\}".format(number, cub))\par
+\b Q2\par
+\b0 r=int(input("Enter upper limit: "))\par
+for a in range(2,r+1):\par
+    k=0\par
+    for i in range(2,a//2+1):\par
+        if(a%i==0):\par
+            k=k+1\par
+    if(k<=0):\par
+        print(a)\par
+\b Slip-9\par
+Q1\par
+\b0 numbers = [1, 2, 3, 4, 5]\par
+squares = []\par
+for number in numbers:\par
+    squares.append(number**2)\par
+print(squares)\par
+\b Q2\par
+\b0 nl=[]\par
+for x in range(150, 270):\par
+    if (x%7!=0) and (x%3==0):\par
+        nl.append(str(x))\par
+print (','.join(nl))\par
+\b Slip-10\par
+Q1\par
+\b0 a = lambda x, y : x * y\par
+print(a(5, 6))\par
+\b Q2\par
+\b0 import os\par
+ \par
+print("Python Program to print list the files in a directory.")\par
+ \par
+Direc = input(r"Enter the path of the folder: ")\par
+print(f"Files in the directory: \{Direc\}")\par
+ \par
+files = os.listdir(Direc)\par
+files = [f for f in files if os.path.isfile(Direc+'/'+f)] #Filtering only the files.\par
+print(*files, sep="\\n")\par
+ \b\par
+}
+ 

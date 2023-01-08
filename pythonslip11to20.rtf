@@ -1,0 +1,309 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Slip1\par
+\par
+Q2)Write a python function to check whether a number is perfect or not. \par
+n = int(input("Enter any number: "))\par
+sum1 = 0\par
+for i in range(1, n):\par
+    if(n % i == 0):\par
+        sum1 = sum1 + i\par
+if (sum1 == n):\par
+    print("The number is a Perfect number!")\par
+else:\par
+    print("The number is not a Perfect number!")\par
+**********************************************************************\par
+slip10)\par
+Q1)\par
+\par
+***********************************************************************\par
+slip11)\par
+Q1)\par
+tup=(1,3,4,32,1,1,1,31,32,12,21,2,3)  \par
+for i in tup:\par
+    if tup.count(i) > 1:\par
+        print(i)\par
+Q2)\par
+\par
+************************************************************************\par
+slip12)\par
+Q1)\par
+#take user input\par
+string = 'Hello'\par
+\par
+count = 0\par
+\par
+for i in string:\par
+ \par
+    count+=1\par
+print(count)\par
+Q2)\par
+def string_test(s):\par
+    d=\{"UPPER_CASE":0, "LOWER_CASE":0\}\par
+    for c in s:\par
+        if c.isupper():\par
+           d["UPPER_CASE"]+=1\par
+        elif c.islower():\par
+           d["LOWER_CASE"]+=1\par
+        else:\par
+           pass\par
+    print ("Original String : ", s)\par
+    print ("No. of Upper case characters : ", d["UPPER_CASE"])\par
+    print ("No. of Lower case Characters : ", d["LOWER_CASE"])\par
+\par
+string_test('The quick Brown Fox')\par
+\par
+**************************************************************************\par
+slip13)\par
+Q1)\par
+#Create a set\par
+setn = \{5, 10, 3, 15, 2, 20\}\par
+print("Original set elements:")\par
+print(setn)\par
+print(type(setn))\par
+print("\\nMaximum value of the said set:")\par
+print(max(setn))\par
+print("\\nMinimum value of the said set:")\par
+print(min(setn))\par
+Q2)s = input("Input a string")\par
+d=l=0\par
+for c in s:\par
+    if c.isdigit():\par
+        d=d+1\par
+    elif c.isalpha():\par
+        l=l+1\par
+    else:\par
+        pass\par
+print("Letters", l)\par
+print("Digits", d)\par
+\par
+***************************************************************************\par
+slip14)\par
+Q1)\par
+tuplex = ("w", 3, "r", "e", "s", "o", "u", "r", "c", "e")\par
+print("r" in tuplex)\par
+print(5 in tuplex)\par
+Q2)\par
+def gcd(x, y):\par
+   gcd = 1   \par
+   if x % y == 0:\par
+       return y   \par
+   for k in range(int(y / 2), 0, -1):\par
+       if x % k == 0 and y % k == 0:\par
+           gcd = k\par
+           break \par
+   return gcd\par
+print("GCD of 12 & 17 =",gcd(12, 17))\par
+print("GCD of 4 & 6 =",gcd(4, 6))\par
+print("GCD of 336 & 360 =",gcd(336, 360))\par
+************************************************************************\par
+slip15)\par
+Q 1)\par
+tup=(1,3,4,32,1,1,1,31,32,12,21,2,3)  \par
+for i in tup:\par
+    if tup.count(i) > 1:\par
+        print(i)\par
+Q2)\par
+c = input()\par
+\par
+temp = ""\par
+\par
+for i in range(len(c)):\par
+\par
+    if i%2==0:\par
+\par
+        temp = temp+c[i]\par
+\par
+print(temp)\par
+*************************************************************************\par
+slip16\par
+Q1)\par
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]\par
+for i in a:\par
+    if i < 5:\par
+        print(i)\par
+Q2)\par
+class Circle():\par
+\par
+    def radius(self,radius):\par
+        r = radius\par
+    def area(self,r):\par
+        area = 3.142*r*r\par
+        print("Area of the circle is: ",area)\par
+    def peri(self,r):\par
+        peri = 2*3.14*r\par
+        print("Perimeter of the circle is: ",peri)\par
+\par
+c = Circle()\par
+radius = int(input("Enter the radius of circle: "))\par
+c.area(radius)\par
+c.peri(radius)\par
+**************************************************************************\par
+slip17\par
+Q1)\par
+def string_reverse(str1):\par
+\par
+    rstr1 = ''\par
+    index = len(str1)\par
+    while index > 0:\par
+        rstr1 += str1[ index - 1 ]\par
+        index = index - 1\par
+    return rstr1\par
+print(string_reverse('1234abcd'))\par
+\par
+***************************************************************************\par
+slip18\par
+Q1)\par
+def count_characters(s):\par
+    count = 0\par
+    for c in s:\par
+        count += 1\par
+    return count\par
+\par
+# test the function\par
+print(count_characters("hello"))  # prints 5\par
+or\par
+Q2)\par
+d = \{1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60\}\par
+def is_key_present(x):\par
+  if x in d:\par
+      print('Key is present in the dictionary')\par
+  else:\par
+      print('Key is not present in the dictionary')\par
+is_key_present(5)\par
+is_key_present(9)\line *************************************************************************\par
+\par
+**************************************************************************\par
+Slip19)\par
+Q1)\par
+def chars_mix_up(a, b):\par
+  new_a = b[:2] + a[2:]\par
+  new_b = a[:2] + b[2:]\par
+\par
+  return new_a + ' ' + new_b\par
+print(chars_mix_up('abc', 'xyz'))\par
+Q2)\par
+class Employee:\par
+    __id=0\par
+    __name=""\par
+    __gender=""\par
+    __city=""\par
+    __salary=0\par
+    def setData(self):\par
+        self.__id=int(input("Enter Id\\t:"))\par
+        self.__name = input("Enter Name\\t:")\par
+        self.__gender = input("Enter Gender:")\par
+        self.__city = input("Enter City\\t:")\par
+        self.__salary = int(input("Enter Salary:"))\par
+    def showData(self):\par
+        print("Id\\t\\t:",self.__id)\par
+        print("Name\\t:", self.__name)\par
+        print("Gender\\t:", self.__gender)\par
+        print("City\\t:", self.__city)\par
+        print("Salary\\t:", self.__salary)\par
+\par
+\par
+def main():\par
+    #Employee Object\par
+    emp=Employee()\par
+    emp.setData()\par
+    emp.showData()\par
+\par
+if __name__=="__main__":\par
+    main()\par
+Or\par
+Q2)\par
+\b t=tuple()\par
+n=int(input("Total number of values in tuple"))\par
+for i in range(n):\par
+    a=input("enter elements")\par
+    t=t+(a,)\par
+print ("maximum value=",max(t))\par
+print ("minimum value=",min(t))\b0\par
+***************************************************************************\par
+slip 20)\par
+Q1)\par
+smp = input("Please Enter your Own Words : ")\par
+smp1 = ''\par
+\par
+for i in smp:\par
+    if(i >= 'a' and i <= 'z'):\par
+        smp1 = smp1 + chr((ord(i) - 32))\par
+    else:\par
+        smp1 = smp1 + i\par
+ \par
+print("\\nOriginal =  ", smp)\par
+print("The Result =  ", smp1)\par
+Q2)\par
+def add(x, y):\par
+    return x + y\par
+\par
+# This function subtracts two numbers\par
+def subtract(x, y):\par
+    return x - y\par
+\par
+# This function multiplies two numbers\par
+def multiply(x, y):\par
+    return x * y\par
+\par
+# This function divides two numbers\par
+def divide(x, y):\par
+    return x / y\par
+\par
+\par
+print("Select operation.")\par
+print("1.Add")\par
+print("2.Subtract")\par
+print("3.Multiply")\par
+print("4.Divide")\par
+\par
+while True:\par
+    # take input from the user\par
+    choice = input("Enter choice(1/2/3/4): ")\par
+\par
+    # check if choice is one of the four options\par
+    if choice in ('1', '2', '3', '4'):\par
+        try:\par
+            num1 = float(input("Enter first number: "))\par
+            num2 = float(input("Enter second number: "))\par
+        except ValueError:\par
+            print("Invalid input. Please enter a number.")\par
+            continue\par
+\par
+        if choice == '1':\par
+            print(num1, "+", num2, "=", add(num1, num2))\par
+\par
+        elif choice == '2':\par
+            print(num1, "-", num2, "=", subtract(num1, num2))\par
+\par
+        elif choice == '3':\par
+            print(num1, "*", num2, "=", multiply(num1, num2))\par
+\par
+        elif choice == '4':\par
+            print(num1, "/", num2, "=", divide(num1, num2))\par
+        \par
+        # check if user wants another calculation\par
+        # break the while loop if answer is no\par
+        next_calculation = input("Let's do next calculation? (yes/no): ")\par
+        if next_calculation == "no":\par
+          break\par
+    else:\par
+        print("Invalid Input")\par
+Or\par
+Q2)# define three sets\par
+E = \{0, 2, 4, 6, 8\};\par
+N = \{1, 2, 3, 4, 5\};\par
+\par
+# set union\par
+print("Union of E and N is",E | N)\par
+\par
+# set intersection\par
+print("Intersection of E and N is",E & N)\par
+\par
+# set difference\par
+print("Difference of E and N is",E - N)\par
+\par
+# set symmetric difference\par
+print("Symmetric difference of E and N is",E ^ N)\par
+}
+ 
